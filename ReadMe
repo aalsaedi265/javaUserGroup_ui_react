@@ -1,0 +1,25 @@
+
+This is full stack app using react & java with spring boot.
+
+
+## Installation
+to initlize spring you can use website https://start.spring.io/
+or use the exension in vscode
+both works however i prefer to use vscode while older devlopers will use the site, which still valid here is the lay out for how to start
+
+
+Press Ctrl+Shift+P to open the Command Palette.
+Type Spring Initializr: Generate a Maven Project and select it.
+Follow the prompts to configure your project:
+
+Group ID: com.example => Name of file runs your project
+Artifact ID: demo => Name of your project
+Name: Demo
+Dependencies: Add dependencies like Spring Web, Spring Boot DevTools, Spring Data JPA, etc.
+
+## Dependencies
+spring data jpa
+h2 database
+Lombok
+spring web
+
