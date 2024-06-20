@@ -23,3 +23,11 @@ h2 database
 Lombok
 spring web
 
+## Run Application
+
+project root directory: ./mvnw spring-boot:run
+or
+spring boot extension pack
+press Ctrl+Shift+P (vs code) to open the Command Palette.
+Type Spring Boot Dashboard and select it.
+In the Spring Boot Dashboard, locate your project and click the play (run) button next to it
