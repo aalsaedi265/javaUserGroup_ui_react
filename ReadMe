@@ -1,6 +1,8 @@
 
 This is full stack app using react & java with spring boot.
 
+## Built using react 18 & java 20
+
 
 ## Installation
 to initlize spring you can use website https://start.spring.io/
@@ -31,3 +33,18 @@ spring boot extension pack
 press Ctrl+Shift+P (vs code) to open the Command Palette.
 Type Spring Boot Dashboard and select it.
 In the Spring Boot Dashboard, locate your project and click the play (run) button next to it
+
+## HTTP
+http://localhost:8080/api/groups
+
+install HTTPie for testing CRUD
+http :8080/api/groups
+
+http POST :8080/api/group name='Tarterous JUG' city='4th Circle, valley of sorrow' country=USA
+http :8080/api/group/5
+http PUT :8080/api/group/5 id=6 name='Tarterous JUG' address='in the mines'
+http DELETE :8080/api/group/5
+
+## REACT
+app will be the name of directory
+npx create-react-app directoryName

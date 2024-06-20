@@ -42,7 +42,7 @@ class Initializer implements CommandLineRunner {
         Event event = Event.builder()
                 .title("Micro Frontends for Java Developers")
                 .description("JHipster now has microfrontend support!")
-                .date(Instant.parse("2022-09-13T17:00:00.000Z"))
+                .date(Instant.parse("2023-09-13T17:00:00.000Z"))
                 .build();
 
         // Add the event to the Seattle JUG group and save the group
