@@ -1,4 +1,4 @@
-package com.react_spring_proj.restful_api.web;
+package com.react_spring_proj.restful_api.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

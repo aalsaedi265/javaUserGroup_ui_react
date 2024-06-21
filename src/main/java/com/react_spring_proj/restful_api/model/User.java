@@ -8,15 +8,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "users")
 
+// Automatically generates getters, setters, toString(), equals(), and hashCode() methods for the fields in the class
+@Data
+// Generates a no-argument constructor for the class
+@NoArgsConstructor
+// Generates a constructor with arguments for all fields in the class
+@AllArgsConstructor
+// Marks the class as a JPA entity
+@Entity
+// Specifies the name of the database table associated with the entity
+@Table(name = "users")
 public class User {
+    // Marks the field as the primary key of the entity
     @Id
-    private String id;
-    private String name;
-    private String email;
+    private String id; // Declares a field named id of type String
+    private String name; // Declares a field named name of type String
+    private String email; // Declares a field named email of type String
 }

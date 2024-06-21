@@ -14,8 +14,10 @@ Press Ctrl+Shift+P to open the Command Palette.
 Type Spring Initializr: Generate a Maven Project and select it.
 Follow the prompts to configure your project:
 
-Group ID: com.example => Name of file runs your project
+Group ID: com.example => Name of file runs your project it will be set to it in application.properties
+
 Artifact ID: demo => Name of your project
+
 Name: Demo
 Dependencies: Add dependencies like Spring Web, Spring Boot DevTools, Spring Data JPA, etc.
 
@@ -33,6 +35,12 @@ spring boot extension pack
 press Ctrl+Shift+P (vs code) to open the Command Palette.
 Type Spring Boot Dashboard and select it.
 In the Spring Boot Dashboard, locate your project and click the play (run) button next to it
+
+## port
+application.properties file located in src/main/resources. By default, Spring Boot uses port 8080 if no port is specified
+if you want to change it user server.port
+server.port=8081
+
 
 ## HTTP
 http://localhost:8080/api/groups
