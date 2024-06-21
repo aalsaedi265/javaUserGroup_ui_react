@@ -45,6 +45,11 @@ http :8080/api/group/5
 http PUT :8080/api/group/5 id=6 name='Tarterous JUG' address='in the mines'
 http DELETE :8080/api/group/5
 
-## REACT
+### REACT
 app will be the name of directory
 npx create-react-app directoryName
+
+PROXY the server side api in the react package json
+if you don't do it it will fetch data to the front end
+"proxy": "http://localhost:8080"
+its the one i chose for java server side
