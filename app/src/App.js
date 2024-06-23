@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+// import from index in components;
+import { Navbar, GroupList } from './components';
 
 function App() {
 
@@ -27,7 +29,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div className="App-intro">
           <h2>Java User Group List</h2>
-          {groups.map(group =><div key={group.id}>{group.name} </div>)}
+          {groups.map(group => <div key={group.id}>{group.name} </div>)}
+          <GroupList groups={groups} />
+          <Navbar />
         </div>
       </header>
     </div>
