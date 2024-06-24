@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AppNavbar from './AppNavbar';
+import '../css/GroupList.css';
 
 
 function GroupList() {
@@ -70,12 +71,12 @@ function GroupList() {
             );
           })}
         </td>
-        {/* Render the action buttons */}
+      
         <td>
           <div className="btn-group">
-            {/* Render the edit button */}
+          
             <Link to={"/groups/" + group.id} className="btn btn-primary btn-sm">Edit</Link>
-            {/* Render the delete button */}
+          
             <button onClick={() => remove(group.id)} className="btn btn-danger btn-sm">Delete</button>
           </div>
         </td>
