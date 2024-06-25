@@ -20,12 +20,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 70%;
 }
 
 .navbar-toggler-icon{
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1rem;
+    height: 1rem;
     background-color: #000;
     /* got from ai and it looked cool so i kep it */
     mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTEuNSAyLjVIMTIuNXYxSDEuNVYyLjVabTIuNCAzLjVINy42di45SDEuNVY1LjVabTIuNCAzLjVINy42di45SDEuNXYtLjl6Ii8+PC9zdmc+') no-repeat center;

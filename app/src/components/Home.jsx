@@ -1,10 +1,18 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+import AppNavbar from "./AppNavbar";
+import '../css/Home.css';
 
 function Home() {
     return (
         <div>
-            <h1>Home</h1>
+            <AppNavbar />
+            <div className="container-fluid">
+                <button className="btn btn-link">
+                    <Link to="/groups">Manage Tours</Link>
+                </button>
+            </div>
         </div>
     );
 }
