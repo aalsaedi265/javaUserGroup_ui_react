@@ -9,9 +9,10 @@ function Home() {
         <div>
             <AppNavbar />
             <div className="container-fluid">
-                <button className="btn btn-link">
+                {/* <button className="btn btn-link">
                     <Link to="/groups">Manage Tours</Link>
-                </button>
+                </button> */}
+                <h1>Home</h1>
             </div>
         </div>
     );
