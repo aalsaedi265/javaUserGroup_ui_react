@@ -61,3 +61,12 @@ PROXY the server side api in the react package json
 if you don't do it it will fetch data to the front end
 "proxy": "http://localhost:8080"
 its the one i chose for java server side
+
+## CORS
+when 405 error occurs, it means CORS is not allowed.
+or when you send post request without cors header it will not work
+in spring boot you can use spring.web.cors.EnableCORS and buit it a config folder then use it in controller
+
+## OAuth0
+install from https://github.com/auth0/auth0-cli   based on your OS
+do this in terminal less chance of error
