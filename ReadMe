@@ -68,5 +68,56 @@ or when you send post request without cors header it will not work
 in spring boot you can use spring.web.cors.EnableCORS and buit it a config folder then use it in controller
 
 ## OAuth0
-install from https://github.com/auth0/auth0-cli   based on your OS
-do this in terminal less chance of error
+alias x = command of choice
+1. install from https://github.com/auth0/auth0-cli   based on your OS do this in terminal less chance of error
+
+check if auth0 is installed
+auth0 --version
+
+if not you will have to install it manually in you system
+open your terminal as ADMINISTRATOR and run below based on your path
+
+[System.Environment]::SetEnvironmentVariable('PATH', $Env:PATH + ";C:\your\actuall\path\toProject", [System.EnvironmentVariableTarget]::User)
+
+
+now will have it when running auth0 --version
+
+make account with auth0 before you do this
+
+2.  auth0 login   
+    auth0 apps create 
+    provide a memorable name
+    select Regular Web Application. 
+
+    http://localhost:8080/login/oauth2/code/auth0  frontend  Callback URLs
+
+    http://localhost:3000,http://localhost:8080  backend   Allowed Logout URL
+
+
+    here is mine for example
+    CLIENT ID            ldkfjasldk;fjasklfjsadlfjasljklol
+    NAME                 React + SpringBoot
+    DESCRIPTION
+    TYPE                 Regular Web Application
+    CALLBACKS            http://localhost:8080/login/oauth2/code/auth0
+    ALLOWED LOGOUT URLS  http://localhost:3000, http://localhost:8080
+    ALLOWED ORIGINS
+    ALLOWED WEB ORIGINS
+    TOKEN ENDPOINT AUTH
+    GRANTS               implicit, authorization_code, refresh_token, client_credentials
+    METADATA
+
+    
+3.
+
+    auth0 apps open
+    pick the project your working on to grab the secret key
+    the in the properties file you will see the secreet key varable, don't put secret in the hard code lol
+
+# make sure to include the trailing slash for the Auth0 issuer
+spring.security.oauth2.client.provider.auth0.issuer-uri=https://<your-auth0-domain>/
+spring.security.oauth2.client.registration.auth0.client-id=<your-client-id>
+spring.security.oauth2.client.registration.auth0.client-secret=<your-client-secret>
+spring.security.oauth2.client.registration.auth0.scope=openid,profile,email
+
+you can do this also with okta, i use the auth0 because everyone in my area uses it, and it will get me more money when i work ahhaahahah
