@@ -1,3 +1,4 @@
+
 package com.react_spring_proj.restful_api;
 
 import org.springframework.boot.SpringApplication;
@@ -13,5 +14,4 @@ public class RestfulApiApplication {
 		System.setProperty("SECRET_KEY", dotenv.get("SECRET_KEY"));
 		SpringApplication.run(RestfulApiApplication.class, args);
 	}
-
 }

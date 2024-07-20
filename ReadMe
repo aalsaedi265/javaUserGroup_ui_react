@@ -62,12 +62,17 @@ if you don't do it it will fetch data to the front end
 "proxy": "http://localhost:8080"
 its the one i chose for java server side
 
+cookiesProvider allows you to read the CSRF cookie and send it back as a header
+
+The useCookies(['XSRF-TOKEN']) hook reads the XSRF-TOKEN cookie for CSRF protection. The token is included in request headers ('X-XSRF-TOKEN': cookies['XSRF-TOKEN']) to verify that requests are from authenticated users and prevent CSRF attacks.
+
 ## CORS
 when 405 error occurs, it means CORS is not allowed.
 or when you send post request without cors header it will not work
 in spring boot you can use spring.web.cors.EnableCORS and buit it a config folder then use it in controller
 
 ## OAuth0
+
 alias x = command of choice
 1. install from https://github.com/auth0/auth0-cli   based on your OS do this in terminal less chance of error
 
@@ -114,10 +119,22 @@ make account with auth0 before you do this
     pick the project your working on to grab the secret key
     the in the properties file you will see the secreet key varable, don't put secret in the hard code lol
 
+
+oauth0 dash board https://manage.auth0.com/
+
 # make sure to include the trailing slash for the Auth0 issuer
 spring.security.oauth2.client.provider.auth0.issuer-uri=https://<your-auth0-domain>/
 spring.security.oauth2.client.registration.auth0.client-id=<your-client-id>
 spring.security.oauth2.client.registration.auth0.client-secret=<your-client-secret>
 spring.security.oauth2.client.registration.auth0.scope=openid,profile,email
 
-you can do this also with okta, i use the auth0 because everyone in my area uses it, and it will get me more money when i work ahhaahahah
+you can do this also with okta, i use the auth0 because everyone in my area uses it, and it will get me more money when i work ahhaahahah 
+
+## security
+ HttpSecurity object is configured to authorize requests 
+ AuthorizeHttpRequests method is used to specify the request patterns that should be allowed or denied. In this case, the patterns /, /index.html, /static/**, /*.ico, /*.json, /*.png, and /api/user are allowed for all users. Any other requests will require authentication.
+
+CSRF protection by setting the CSRF token repository and the CSRF token request handler
+Custom filter called CookieCsrfFilter after the BasicAuthenticationFilter.
+
+returns the built HttpSecurity object.

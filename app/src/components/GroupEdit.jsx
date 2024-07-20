@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import AppNavbar from "./AppNavbar";
+import { useCookies } from "react-cookie";
 import '../css/GroupEdit.css';
 
 function GroupEdit() {
@@ -16,10 +17,17 @@ function GroupEdit() {
     const [group, setGroup] = useState(initialFormState);
     const navigate = useNavigate();
     const { id } = useParams();
+    const [cookies] = useCookies(['XSRF-TOKEN']); // Use cookies to get CSRF token
 
     useEffect(() => {
         if (id !== 'new') {
-            fetch(`/api/groups/${id}`)
+            fetch(`/api/groups/${id}`, {
+                credentials: 'include', // Ensure credentials are included
+                headers: {
+                    'X-XSRF-TOKEN': cookies['XSRF-TOKEN'],
+                    'Content-Type': 'application/json'
+                }
+            })
                 .then(response => {
                     if (response.ok) {
                         return response.json();
@@ -29,7 +37,7 @@ function GroupEdit() {
                 .then(data => setGroup(data))
                 .catch(error => console.error('There was a problem with the fetch operation:', error));
         }
-    }, [id]);
+    }, [id, cookies]);
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -44,9 +52,11 @@ function GroupEdit() {
         try {
             const response = await fetch(url, {
                 method: method,
+                credentials: 'include', // Ensure credentials are included
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'X-XSRF-TOKEN': cookies['XSRF-TOKEN'] // Include CSRF token in headers
                 },
                 body: JSON.stringify(group)
             });
