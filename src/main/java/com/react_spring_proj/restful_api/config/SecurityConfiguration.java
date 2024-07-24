@@ -13,6 +13,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.react_spring_proj.restful_api.controller.CookieCsrfFilter;
+import com.react_spring_proj.restful_api.controller.SpaWebFilter;
 
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class SecurityConfiguration {
                                                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                                                 .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler()))
                                 .oauth2Login(withDefaults()) // Configure OAuth2 login
+                                .addFilterAfter(new SpaWebFilter(), BasicAuthenticationFilter.class)
                                 .addFilterAfter(new CookieCsrfFilter(), BasicAuthenticationFilter.class);
 
                 return http.build();
